@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/33bf71008df249ef83e47afdf38d8183)](https://www.codacy.com/gh/darmhoo/pipeline-assessment/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=darmhoo/pipeline-assessment&amp;utm_campaign=Badge_Grade)
 # Frontend Assessment
 
 Build and deploy a very simple frontend app for paginated data, that does the following
