@@ -6,7 +6,7 @@ async function fetchUsers(page: any = null, url: any = standUrl) {
   console.log("igothre");
   try {
     let list = await axios.get(url + (page ? `&page=${page}` : ""));
-       return list.data;
+    return list.data;
   } catch (err) {
     console.log(err);
     }
