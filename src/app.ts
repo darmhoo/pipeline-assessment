@@ -32,7 +32,7 @@ const startApp = async () => {
   });
 
   let label = document.querySelector("label");
-   label?.insertAdjacentHTML('afterbegin', `Current Page: ${info.page}`);
+  label?.insertAdjacentHTML("afterbegin", `Current Page: ${info.page}`);
 //    console.log();
 
    btn[1].addEventListener('click', async function(){
