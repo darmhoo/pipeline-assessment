@@ -22,8 +22,7 @@ const startApp = async () => {
 
   
    let btn = document.querySelectorAll('button');
-   btn[0].setAttribute('data-prevbtn', a?.paging?.previous);
-   btn[1].setAttribute('data-nextbtn', a?.paging?.next);
+  
 
 
 
@@ -41,8 +40,6 @@ const startApp = async () => {
 
   
    
-   tbody?.setAttribute('data-sink', a[1] );
-   console.log(a);
    
 
 };
