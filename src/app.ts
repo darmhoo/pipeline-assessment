@@ -13,7 +13,7 @@ const startApp = async () => {
    let tbody = document.querySelector('tbody');
 
   for (let i = 0, row; (row = tbody?.rows[i]); i++) {
-    row.setAttribute('data-entryid', data[info.page][i].id);
+    row.setAttribute("data-entryid", data[info.page][i].id);
     row.cells[0].innerText = data[info.page][i].row;
     row.cells[1].innerText = data[info.page][i].gender;
     row.cells[2].innerText = data[info.page][i].age;
