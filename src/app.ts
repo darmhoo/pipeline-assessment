@@ -35,7 +35,7 @@ const startApp = async () => {
   label?.insertAdjacentHTML("afterbegin", `Current Page: ${info.page}`);
 //    console.log();
 
-   btn[1].addEventListener('click', async function(){
+  btn[1].addEventListener("click", async function () {
     await fetchUsers.fetchUsers(null, this.getAttribute("data-nextbtn"));
    });
 
