@@ -15,16 +15,19 @@ const startApp = async () => {
 		row.cells[2].innerText = data[info.page][i].age;
 	}
 
+    console.log(data);
+
 	let btn = document.querySelectorAll('button');
-	btn[0].setAttribute('data-prevbtn', a?.paging?.previous);
-	btn[1].setAttribute('data-nextbtn', a?.paging?.next);
+	btn[0].setAttribute('data-prevbtn', data?.paging?.previous);
+	btn[1].setAttribute('data-nextbtn', data?.paging?.next);
 
 	btn[0].addEventListener('click', async function () {
 		await fetchUsers.fetchUsers(null, this.getAttribute('data-prevbtn'));
 	});
 
 	let label = document.querySelector('label');
-	label?.insertAdjacentHTML('afterbegin', `Current Page: ${info.page}`);
+	label?.insertAdjacentHTML('afterbegin', `Showing Page: ${info.page}`);
+    
 	//    console.log();
 
 	btn[1].addEventListener('click', async function () {
