@@ -22,7 +22,7 @@ const startApp = async () => {
 
   
    let btn = document.querySelectorAll('button');
-   btn[0].setAttribute('data-prevbtn', a?.paging?.previous);
+  btn[0].setAttribute("data-prevbtn", a?.paging?.previous);
    btn[1].setAttribute('data-nextbtn', a?.paging?.next);
 
 
