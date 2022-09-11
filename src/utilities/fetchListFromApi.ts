@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 let list = [1, 2, 3, 4, 5];
 const standUrl = "https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84";
 
