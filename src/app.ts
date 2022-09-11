@@ -52,6 +52,7 @@ const populateTable = (data, info) => {
 		row.cells[2].innerText = data[info.page][i].age;
 	}
 	let label = document.querySelector('label');
+	label.setAttribute('data-pageview', info.page);
 	label.innerHTML = `Showing Page ${info.page}`;
 };
 
