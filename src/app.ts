@@ -8,8 +8,7 @@ const startApp = async () => {
 	populateTable(data, info);
 
 	let btn = document.querySelectorAll('button');
-	btn[0].setAttribute('data-prevbtn', data?.paging?.previous);
-	btn[1].setAttribute('data-nextbtn', data?.paging?.next);
+	
 
 	btn[0].disabled = true;
 
