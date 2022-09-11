@@ -7,34 +7,40 @@ const startApp = async () => {
 
 	populateTable(data, info);
 
-    let btn = document.querySelectorAll('button');
+	let btn = document.querySelectorAll('button');
 	btn[0].setAttribute('data-prevbtn', data?.paging?.previous);
 	btn[1].setAttribute('data-nextbtn', data?.paging?.next);
 
-    btn[0].disabled = true;
+	btn[0].disabled = true;
 
-    btn[1].addEventListener('click', async () => {
-        let res = await nextPage(data, info);
-        a = res ? res : a;
-        data = a.results[0];
-        info = a.info;
-        populateTable(data, info);
-        btn[0].disabled = false;
+	btn[1].addEventListener(
+		'click',
+		async () => {
+			let res = await nextPage(data, info);
+			a = res ? res : a;
+			data = a.results[0];
+			info = a.info;
+			populateTable(data, info);
+			btn[0].disabled = false;
+		},
+		false
+	);
 
-    }, false);
+	btn[0].addEventListener(
+		'click',
+		async () => {
+			let res = await previousPage(data, info);
+			a = res ? res : a;
+			data = a.results[0];
+			info = a.info;
+			populateTable(data, info);
 
-    btn[0].addEventListener('click', async () => {
-        let res = await previousPage(data, info);
-        a = res ? res : a;
-        data = a.results[0];
-        info = a.info;
-        populateTable(data, info);
-
-        if(!data.paging.previous){
-            btn[0].disabled = true;
-        }
-    }, false)
-
+			if (!data.paging.previous) {
+				btn[0].disabled = true;
+			}
+		},
+		false
+	);
 };
 
 const populateTable = (data, info) => {
@@ -53,26 +59,24 @@ const populateTable = (data, info) => {
 const nextPage = async (dataF, info) => {
 	if (info.page === Object.keys(dataF)[1]) {
 		let a = await fetchUsers.fetchUsers(null, dataF.paging?.next);
-		
-        return a;
+
+		return a;
 	} else {
 		info.page = Object.keys(dataF)[1];
 		populateTable(dataF, info);
-        return null;
+		return null;
 	}
 };
 
 const previousPage = async (dataF, info) => {
 	if (info.page === Object.keys(dataF)[0]) {
-		let a = await fetchUsers.fetchUsers(null, dataF.paging?.previous);		
-        return a;
+		let a = await fetchUsers.fetchUsers(null, dataF.paging?.previous);
+		return a;
 	} else {
 		info.page = Object.keys(dataF)[0];
 		populateTable(dataF, info);
-        return null;
+		return null;
 	}
 };
-
-
 
 document.addEventListener('DOMContentLoaded', startApp);
