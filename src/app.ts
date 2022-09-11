@@ -29,7 +29,7 @@ const startApp = async () => {
 
    btn[0].addEventListener('click', async function(){
     await fetchUsers.fetchUsers(null, this.getAttribute("data-prevbtn"));
-   });
+  });
 
    let label = document.querySelector('label');
    label?.insertAdjacentHTML('afterbegin', `Current Page: ${info.page}`);
