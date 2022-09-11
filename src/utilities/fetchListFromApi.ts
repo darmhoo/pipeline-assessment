@@ -8,7 +8,7 @@ async function fetchUsers(page: any = null, url: any = standUrl) {
     let list = await axios.get(url + (page ? `&page=${page}` : ""));
        return list.data;
   } catch (err) {
-        console.log(err)
+    console.log(err);
     }
 
     
